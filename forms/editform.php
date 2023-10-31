@@ -1,3 +1,15 @@
+<?php
+    // including the database connection file
+    include_once("../dbConnection/mysqlconfig_connection.php");
+    // getting id of the data from url
+    $id = $_GET['id'];
+    // selecting data associated with this particular id
+    $result = mysqli_query($dbc, "SELECT * FROM tblsubjects WHERE subject_id=$id");
+    while($res = mysqli_fetch_array($result)) {
+        $code = $res['subject_code'];
+        $name = $res['subject_name'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

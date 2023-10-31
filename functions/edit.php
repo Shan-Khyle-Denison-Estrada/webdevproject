@@ -8,15 +8,15 @@
         // checking empty fields
         if(empty($code) || empty($name)) {
             if(empty($code)) {
-                echo "<front color='red'>Subject Code field is empty.</font><br/>"
+                echo "<front color='red'>Subject Code field is empty.</font><br/>";
             }
             if(empty($name)) {
-                echo "<front color='red'>Subject Name field is empty.</font><br/>"
+                echo "<front color='red'>Subject Name field is empty.</font><br/>";
             }
         }
         else {
             // updating the table
-            mysqli_query($dbc, "UPDATE tbsubject SET subject_code='$code'. subject_name='$name' WHERE subject_id='$id'");
+            mysqli_query($dbc, "UPDATE tblsubjects SET subject_code='$code', subject_name='$name' WHERE subject_id='$id'");
             // redirecting to the display page. In our case, it is index.php
             header("Location: ../index.php");
         }

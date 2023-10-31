@@ -16,10 +16,10 @@
                 // checking empty fields
                 if(empty($code) || empty($name)) {
                     if(empty($code)) {
-                        echo "<front color='red'>Subject Code field is empty.</font><br/>"
+                        echo "<front color='red'>Subject Code field is empty.</font><br/>";
                     }
                     if(empty($name)) {
-                        echo "<front color='red'>Subject Name field is empty.</font><br/>"
+                        echo "<front color='red'>Subject Name field is empty.</font><br/>";
                     }
                     // link to the previous page
                     echo "<br/><a href='javasacript:self.history.back();'>Go Back</a>";
@@ -27,7 +27,7 @@
                 else{
                     // if all the fields are filled (not empty)
                     // insert data to database
-                    $result = mysqli_query($dbc, "INSERT INTO tbsubject(subject_code, subject_name) VALUES('$code','$name')");
+                    $result = mysqli_query($dbc, "INSERT INTO tblsubjects(subject_code, subject_name) VALUES('$code','$name')");
                     // display success message
                     echo "<font color='green'>Data added successfully.";
                     echo "<br/><a href='../index.php'>View Result</a>";
